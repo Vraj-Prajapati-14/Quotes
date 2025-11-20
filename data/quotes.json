@@ -1,0 +1,132 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "text": "Love is not about how much you say 'I love you', but how much you prove that it's true.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 2,
+      "text": "The best thing to hold onto in life is each other.",
+      "category": "Love Quotes",
+      "author": "Audrey Hepburn",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 3,
+      "text": "I don't need a perfect person, I need someone who makes me feel perfect.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 4,
+      "text": "I am who I am, and I don't need to prove anything to anyone.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 5,
+      "text": "My attitude is based on how you treat me.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 6,
+      "text": "I'm not perfect, but I'm limited edition.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 7,
+      "text": "Dil ki baat labon tak aayi, Shayari ban kar rah gayi.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 8,
+      "text": "Mohabbat ek aisi kitaab hai, Jise padh kar dil ko sukoon milta hai.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 9,
+      "text": "Zindagi mein kuch pal aise aate hain, Jo hamesha yaad rahte hain.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 10,
+      "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+      "category": "Motivation Quotes",
+      "author": "Winston Churchill",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 11,
+      "text": "The only way to do great work is to love what you do.",
+      "category": "Motivation Quotes",
+      "author": "Steve Jobs",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 12,
+      "text": "Believe you can and you're halfway there.",
+      "category": "Motivation Quotes",
+      "author": "Theodore Roosevelt",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 13,
+      "text": "May this festival bring joy, happiness, and prosperity to your life. Happy Diwali!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 14,
+      "text": "Wishing you a year filled with happiness, success, and new opportunities. Happy New Year!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 15,
+      "text": "May the colors of Holi fill your life with happiness and joy. Happy Holi!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T16:42:53.084Z"
+    }
+  ],
+  "lastUpdate": "2024-01-01T00:00:00.000Z",
+  "updateSchedule": {
+    "loveQuotes": {
+      "lastUpdate": null,
+      "count": 0
+    },
+    "attitudeStatus": {
+      "lastUpdate": null,
+      "count": 0
+    },
+    "shayari": {
+      "lastUpdate": null,
+      "count": 0
+    },
+    "motivationQuotes": {
+      "lastUpdate": null,
+      "count": 0
+    },
+    "festivalWishes": {
+      "lastUpdate": null,
+      "count": 0
+    }
+  }
+}
