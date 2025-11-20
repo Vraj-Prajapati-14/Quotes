@@ -1,10 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import QuoteCard from '@/components/QuoteCard'
 
-export default function SearchPage() {
+// Force dynamic rendering for search page
+export const dynamic = 'force-dynamic'
+
+function SearchContent() {
   const searchParams = useSearchParams()
   const query = searchParams.get('q') || ''
   const [searchTerm, setSearchTerm] = useState(query)
@@ -84,6 +87,25 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="container-custom py-12">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+            Search Quotes
+          </h1>
+          <div className="text-center py-8">
+            <p className="text-gray-500">Loading...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   )
 }
 
