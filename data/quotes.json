@@ -104,9 +104,149 @@
       "category": "Festival Wishes",
       "author": "Unknown",
       "createdAt": "2025-11-20T16:42:53.084Z"
+    },
+    {
+      "id": 16,
+      "text": "Love is like the wind, you can't see it but you can feel it.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.191Z"
+    },
+    {
+      "id": 17,
+      "text": "Love is friendship that has caught fire.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.191Z"
+    },
+    {
+      "id": 18,
+      "text": "I don't follow the crowd, I make my own path.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.226Z"
+    },
+    {
+      "id": 19,
+      "text": "My attitude reflects my leadership.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.226Z"
+    },
+    {
+      "id": 20,
+      "text": "Dil se jo nikli hai baat, Woh shayari hai yaad.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.266Z"
+    },
+    {
+      "id": 21,
+      "text": "Mohabbat ek aisi baat hai, Jo har dil ko pasand hai.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.266Z"
+    },
+    {
+      "id": 22,
+      "text": "Push yourself, because no one else is going to do it for you.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.299Z"
+    },
+    {
+      "id": 23,
+      "text": "Little things make big things happen.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.299Z"
+    },
+    {
+      "id": 24,
+      "text": "Hope this festival brings you closer to your goals!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.332Z"
+    },
+    {
+      "id": 25,
+      "text": "May the divine blessings of this festival be with you!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:30.332Z"
+    },
+    {
+      "id": 26,
+      "text": "Love is when the other person's happiness is more important than your own.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.005Z"
+    },
+    {
+      "id": 27,
+      "text": "I saw that you were perfect, and so I loved you. Then I saw that you were not perfect and I loved you even more.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.005Z"
+    },
+    {
+      "id": 28,
+      "text": "I'm not rude, I'm just honest and you're not used to it.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.036Z"
+    },
+    {
+      "id": 29,
+      "text": "I don't have an attitude problem. You have a perception problem.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.036Z"
+    },
+    {
+      "id": 30,
+      "text": "Dil ki baat labon tak aayi, Shayari ban kar rah gayi.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.068Z"
+    },
+    {
+      "id": 31,
+      "text": "Tumhari yaadon mein kho jata hoon, Har saans tumhari yaad deti hai.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.068Z"
+    },
+    {
+      "id": 32,
+      "text": "If you can dream it, you can do it.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.100Z"
+    },
+    {
+      "id": 33,
+      "text": "The only person you are destined to become is the person you decide to be.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.100Z"
+    },
+    {
+      "id": 34,
+      "text": "May this festival bring joy, happiness, and prosperity to your life. Happy Diwali!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.138Z"
+    },
+    {
+      "id": 35,
+      "text": "May this festival bring you endless joy and success!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-20T18:02:49.138Z"
     }
   ],
-  "lastUpdate": "2024-01-01T00:00:00.000Z",
+  "lastUpdate": "2025-11-20T18:02:49.138Z",
   "updateSchedule": {
     "loveQuotes": {
       "lastUpdate": null,
@@ -117,8 +257,8 @@
       "count": 0
     },
     "shayari": {
-      "lastUpdate": null,
-      "count": 0
+      "lastUpdate": "2025-11-20T18:02:49.084Z",
+      "count": 2
     },
     "motivationQuotes": {
       "lastUpdate": null,
@@ -127,6 +267,22 @@
     "festivalWishes": {
       "lastUpdate": null,
       "count": 0
+    },
+    "lovequotes": {
+      "lastUpdate": "2025-11-20T18:02:49.021Z",
+      "count": 2
+    },
+    "attitudestatus": {
+      "lastUpdate": "2025-11-20T18:02:49.052Z",
+      "count": 2
+    },
+    "motivationquotes": {
+      "lastUpdate": "2025-11-20T18:02:49.118Z",
+      "count": 2
+    },
+    "festivalwishes": {
+      "lastUpdate": "2025-11-20T18:02:49.158Z",
+      "count": 2
     }
   }
 }

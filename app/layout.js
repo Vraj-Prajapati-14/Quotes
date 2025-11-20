@@ -1,7 +1,6 @@
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import AdSense from '@/components/AdSense'
+import ConditionalLayout from '@/components/ConditionalLayout'
 import Script from 'next/script'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
@@ -159,11 +158,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <AdSense />
-        <Header />
-        <main className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
+        <ConditionalLayout>
           {children}
-        </main>
-        <Footer />
+        </ConditionalLayout>
       </body>
     </html>
   )

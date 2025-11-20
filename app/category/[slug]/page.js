@@ -126,7 +126,7 @@ export default function CategoryPage({ params }) {
       />
       <div className="container-custom py-12">
         <Breadcrumbs items={[
-          { name: category.name, url: categoryUrl }
+          { name: category.name, path: `/category/${category.slug}`, url: categoryUrl }
         ]} />
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

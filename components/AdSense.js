@@ -14,6 +14,7 @@ export default function AdSense() {
         console.error('AdSense error:', err)
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!adSenseId) {

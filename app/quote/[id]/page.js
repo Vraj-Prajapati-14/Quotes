@@ -140,8 +140,8 @@ export default function QuotePage({ params }) {
       <div className="container-custom py-12">
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[
-            { name: quote.category, url: categoryUrl },
-            { name: 'Quote', url: quoteUrl }
+            { name: quote.category, path: `/category/${categorySlug}`, url: categoryUrl },
+            { name: 'Quote', path: `/quote/${quote.id}`, url: quoteUrl }
           ]} />
           <QuoteCard quote={quote} isFullPage />
           

@@ -7,6 +7,7 @@ export default function AdminPage() {
   const router = useRouter()
   const [quotes, setQuotes] = useState([])
   const [loading, setLoading] = useState(true)
+  const [authenticated, setAuthenticated] = useState(false)
   const [formData, setFormData] = useState({
     text: '',
     category: 'Love Quotes',
@@ -14,8 +15,24 @@ export default function AdminPage() {
   })
   const [updateStatus, setUpdateStatus] = useState('')
 
+  const checkAuth = async () => {
+    try {
+      const res = await fetch('/api/admin/check')
+      const data = await res.json()
+      if (data.authenticated) {
+        setAuthenticated(true)
+        fetchQuotes()
+      } else {
+        router.replace('/admin/login')
+      }
+    } catch (error) {
+      router.replace('/admin/login')
+    }
+  }
+
   useEffect(() => {
-    fetchQuotes()
+    checkAuth()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const fetchQuotes = async () => {
@@ -68,6 +85,43 @@ export default function AdminPage() {
     }
   }
 
+  const handleBulkInit = async (category = null, count = 300) => {
+    setUpdateStatus(`Initializing ${category || 'all categories'} with ${count} quotes each...`)
+    try {
+      const res = await fetch('/api/init', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category, count }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setUpdateStatus(`Success! Added ${data.quotesAdded} quotes to ${data.categories.length} category/categories.`)
+        fetchQuotes()
+      } else {
+        setUpdateStatus('Error: ' + data.error)
+      }
+    } catch (error) {
+      setUpdateStatus('Error: ' + error.message)
+    }
+  }
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/admin/logout', { method: 'POST' })
+      router.push('/admin/login')
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
+  }
+
+  if (!authenticated) {
+    return (
+      <div className="container-custom py-12">
+        <p className="text-center">Checking authentication...</p>
+      </div>
+    )
+  }
+
   if (loading) {
     return (
       <div className="container-custom py-12">
@@ -78,7 +132,15 @@ export default function AdminPage() {
 
   return (
     <div className="container-custom py-12">
-      <h1 className="text-4xl font-bold mb-8">Admin Panel</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-4xl font-bold">Admin Panel</h1>
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+        >
+          Logout
+        </button>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="card">
@@ -144,8 +206,53 @@ export default function AdminPage() {
             Run Auto Update
           </button>
           {updateStatus && (
-            <p className="text-sm text-gray-600">{updateStatus}</p>
+            <p className="text-sm text-gray-600 mb-4">{updateStatus}</p>
           )}
+
+          <div className="border-t border-gray-200 pt-4 mt-4">
+            <h3 className="text-lg font-semibold mb-2">Bulk Initialize</h3>
+            <p className="text-gray-600 text-sm mb-4">
+              Add 300 quotes to each category at once. This will populate your database quickly.
+            </p>
+            <button
+              onClick={() => handleBulkInit(null, 300)}
+              className="btn-primary w-full mb-2 bg-green-600 hover:bg-green-700"
+            >
+              Initialize All Categories (300 each)
+            </button>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <button
+                onClick={() => handleBulkInit('Love Quotes', 300)}
+                className="btn-primary text-sm bg-pink-600 hover:bg-pink-700"
+              >
+                Love (300)
+              </button>
+              <button
+                onClick={() => handleBulkInit('Attitude Status', 300)}
+                className="btn-primary text-sm bg-purple-600 hover:bg-purple-700"
+              >
+                Attitude (300)
+              </button>
+              <button
+                onClick={() => handleBulkInit('Shayari', 300)}
+                className="btn-primary text-sm bg-blue-600 hover:bg-blue-700"
+              >
+                Shayari (300)
+              </button>
+              <button
+                onClick={() => handleBulkInit('Motivation Quotes', 300)}
+                className="btn-primary text-sm bg-green-600 hover:bg-green-700"
+              >
+                Motivation (300)
+              </button>
+              <button
+                onClick={() => handleBulkInit('Festival Wishes', 300)}
+                className="btn-primary text-sm bg-yellow-600 hover:bg-yellow-700 col-span-2"
+              >
+                Festival (300)
+              </button>
+            </div>
+          </div>
 
           <div className="mt-8">
             <h3 className="text-lg font-semibold mb-2">Statistics</h3>

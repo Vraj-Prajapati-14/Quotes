@@ -4,9 +4,14 @@ import Script from 'next/script'
 export default function Breadcrumbs({ items }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
   
+  // Convert items to have both relative paths (for Link) and absolute URLs (for structured data)
   const breadcrumbItems = [
-    { name: 'Home', url: siteUrl },
-    ...items
+    { name: 'Home', path: '/', url: siteUrl },
+    ...items.map(item => ({
+      ...item,
+      path: item.path || item.url?.replace(siteUrl, '') || item.url || '/',
+      url: item.url || `${siteUrl}${item.path || ''}`
+    }))
   ]
 
   const structuredData = {
@@ -37,7 +42,10 @@ export default function Breadcrumbs({ items }) {
               {index === breadcrumbItems.length - 1 ? (
                 <span className="text-gray-900 font-medium">{item.name}</span>
               ) : (
-                <Link href={item.url} className="hover:text-blue-600 transition-colors">
+                <Link 
+                  href={item.path} 
+                  className="hover:text-blue-600 transition-colors"
+                >
                   {item.name}
                 </Link>
               )}
