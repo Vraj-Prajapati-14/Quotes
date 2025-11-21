@@ -124,28 +124,28 @@ export default function CategoryPage({ params }) {
           __html: JSON.stringify(categorySchema)
         }}
       />
-      <div className="container-custom py-12">
+      <div className="container-custom py-8 sm:py-10 md:py-12">
         <Breadcrumbs items={[
           { name: category.name, path: `/category/${category.slug}`, url: categoryUrl }
         ]} />
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
             {category.name}
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {category.description || `Explore our amazing collection of ${category.name.toLowerCase()}`}
           </p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-xs sm:text-sm text-gray-500 mt-2">
             {quotes.length} {quotes.length === 1 ? 'quote' : 'quotes'} available
           </p>
         </div>
 
         {quotes.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No quotes available in this category yet.</p>
+          <div className="text-center py-8 sm:py-12">
+            <p className="text-sm sm:text-base md:text-lg text-gray-500">No quotes available in this category yet.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
             {quotes.map((quote) => (
               <QuoteCard key={quote.id} quote={quote} />
             ))}

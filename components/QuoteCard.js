@@ -17,31 +17,31 @@ export default function QuoteCard({ quote, isFullPage = false }) {
       <div className="mb-4">
         <Link 
           href={quoteUrl}
-          className="text-lg font-medium text-blue-600 hover:text-blue-700 mb-2 inline-block"
+          className="text-sm sm:text-base md:text-lg font-medium text-blue-600 hover:text-blue-700 mb-2 inline-block"
           aria-label={`View ${quote.category} quote`}
         >
           {quote.category}
         </Link>
         {isFullPage ? (
-          <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4" itemProp="text">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-3 sm:mb-4 leading-relaxed" itemProp="text">
             {quote.text}
           </h1>
         ) : (
-          <h2 className="text-xl font-semibold text-gray-800 mb-4" itemProp="text">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4 leading-relaxed" itemProp="text">
             {quote.text}
           </h2>
         )}
         {quote.author && (
-          <p className="text-gray-600 italic" itemProp="author">
+          <p className="text-sm sm:text-base text-gray-600 italic" itemProp="author">
             - {quote.author}
           </p>
         )}
       </div>
       
-      <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-gray-200 gap-3 sm:gap-0">
         <Link
           href={quoteUrl}
-          className="text-blue-600 hover:text-blue-700 font-medium text-sm"
+          className="text-blue-600 hover:text-blue-700 font-medium text-xs sm:text-sm"
         >
           Read More →
         </Link>

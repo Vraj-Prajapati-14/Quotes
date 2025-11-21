@@ -137,19 +137,19 @@ export default function QuotePage({ params }) {
           __html: JSON.stringify(articleSchema)
         }}
       />
-      <div className="container-custom py-12">
-        <div className="max-w-3xl mx-auto">
+      <div className="container-custom py-8 sm:py-10 md:py-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <Breadcrumbs items={[
             { name: quote.category, path: `/category/${categorySlug}`, url: categoryUrl },
             { name: 'Quote', path: `/quote/${quote.id}`, url: quoteUrl }
           ]} />
           <QuoteCard quote={quote} isFullPage />
           
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
+          <div className="mt-8 sm:mt-10 md:mt-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-gray-800">
               Related {quote.category} Quotes
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {relatedQuotes.map((relatedQuote) => (
                 <QuoteCard key={relatedQuote.id} quote={relatedQuote} />
               ))}

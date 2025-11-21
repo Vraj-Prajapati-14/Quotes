@@ -1,4 +1,4 @@
-import { addQuotes } from '@/lib/quotes'
+import { addQuotes } from '@/lib/quotes-kv'
 import { expandQuotes } from '@/lib/quotePools'
 import { NextResponse } from 'next/server'
 
@@ -21,7 +21,7 @@ export async function POST(request) {
       }))
       
       if (quotesToAdd.length > 0) {
-        addQuotes(quotesToAdd)
+        await addQuotes(quotesToAdd)
         totalAdded += quotesToAdd.length
         console.log(`✅ Added ${quotesToAdd.length} quotes to ${cat}`)
       }

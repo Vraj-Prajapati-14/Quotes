@@ -34,17 +34,17 @@ export default function Breadcrumbs({ items }) {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center space-x-2 text-sm text-gray-600">
+      <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6">
+        <ol className="flex items-center flex-wrap space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-600">
           {breadcrumbItems.map((item, index) => (
             <li key={index} className="flex items-center">
-              {index > 0 && <span className="mx-2">/</span>}
+              {index > 0 && <span className="mx-1 sm:mx-2">/</span>}
               {index === breadcrumbItems.length - 1 ? (
-                <span className="text-gray-900 font-medium">{item.name}</span>
+                <span className="text-gray-900 font-medium truncate max-w-[150px] sm:max-w-none">{item.name}</span>
               ) : (
                 <Link 
                   href={item.path} 
-                  className="hover:text-blue-600 transition-colors"
+                  className="hover:text-blue-600 transition-colors truncate max-w-[100px] sm:max-w-none"
                 >
                   {item.name}
                 </Link>

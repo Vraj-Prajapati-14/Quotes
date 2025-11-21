@@ -4,19 +4,19 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
   
   return (
-    <footer className="bg-gray-800 text-white mt-16">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quotes & Shayari</h3>
-            <p className="text-gray-400">
+    <footer className="bg-gray-800 text-white mt-12 sm:mt-16">
+      <div className="container-custom py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quotes & Shayari</h3>
+            <p className="text-sm sm:text-base text-gray-400">
               Your daily source of inspiration with quotes, shayari, and status messages.
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Categories</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Categories</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
               <li>
                 <Link href="/category/love-quotes" className="hover:text-white transition-colors" title="Love Quotes Collection">
                   Love Quotes
@@ -46,8 +46,8 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -62,15 +62,15 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">About</h4>
-            <p className="text-gray-400 text-sm">
+            <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">About</h4>
+            <p className="text-xs sm:text-sm text-gray-400">
               We provide daily updated quotes, shayari, and status messages to inspire and entertain you.
             </p>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Quotes & Shayari. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
+          <p className="text-xs sm:text-sm">&copy; {currentYear} Quotes & Shayari. All rights reserved.</p>
         </div>
       </div>
     </footer>

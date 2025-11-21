@@ -244,9 +244,79 @@
       "category": "Festival Wishes",
       "author": "Unknown",
       "createdAt": "2025-11-20T18:02:49.138Z"
+    },
+    {
+      "id": 36,
+      "text": "You are my paradise and I would happily get stranded on you for a lifetime.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.633Z"
+    },
+    {
+      "id": 37,
+      "text": "You are the reason I believe in love.",
+      "category": "Love Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.633Z"
+    },
+    {
+      "id": 38,
+      "text": "My attitude is my choice, and I choose to be happy.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.693Z"
+    },
+    {
+      "id": 39,
+      "text": "My attitude is my power.",
+      "category": "Attitude Status",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.693Z"
+    },
+    {
+      "id": 40,
+      "text": "Tumhari yaadon mein kho jata hoon, Har saans tumhari yaad deti hai.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.745Z"
+    },
+    {
+      "id": 41,
+      "text": "Aankhon mein khwab hai, Dil mein umeed hai, Zindagi mein tum ho.",
+      "category": "Shayari",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.745Z"
+    },
+    {
+      "id": 42,
+      "text": "The way to get started is to quit talking and begin doing.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.790Z"
+    },
+    {
+      "id": 43,
+      "text": "Great things never come from comfort zones.",
+      "category": "Motivation Quotes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.790Z"
+    },
+    {
+      "id": 44,
+      "text": "Hope this festival brings you lots of happiness!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.840Z"
+    },
+    {
+      "id": 45,
+      "text": "Hope this festival brings you lots of joy!",
+      "category": "Festival Wishes",
+      "author": "Unknown",
+      "createdAt": "2025-11-21T05:17:00.840Z"
     }
   ],
-  "lastUpdate": "2025-11-20T18:02:49.138Z",
+  "lastUpdate": "2025-11-21T05:17:00.840Z",
   "updateSchedule": {
     "loveQuotes": {
       "lastUpdate": null,
@@ -257,7 +327,7 @@
       "count": 0
     },
     "shayari": {
-      "lastUpdate": "2025-11-20T18:02:49.084Z",
+      "lastUpdate": "2025-11-21T05:17:00.766Z",
       "count": 2
     },
     "motivationQuotes": {
@@ -269,19 +339,19 @@
       "count": 0
     },
     "lovequotes": {
-      "lastUpdate": "2025-11-20T18:02:49.021Z",
+      "lastUpdate": "2025-11-21T05:17:00.655Z",
       "count": 2
     },
     "attitudestatus": {
-      "lastUpdate": "2025-11-20T18:02:49.052Z",
+      "lastUpdate": "2025-11-21T05:17:00.717Z",
       "count": 2
     },
     "motivationquotes": {
-      "lastUpdate": "2025-11-20T18:02:49.118Z",
+      "lastUpdate": "2025-11-21T05:17:00.817Z",
       "count": 2
     },
     "festivalwishes": {
-      "lastUpdate": "2025-11-20T18:02:49.158Z",
+      "lastUpdate": "2025-11-21T05:17:00.858Z",
       "count": 2
     }
   }

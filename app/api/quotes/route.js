@@ -1,4 +1,4 @@
-import { getAllQuotes, addQuote } from '@/lib/quotes'
+import { getAllQuotes as getAllQuotesKV, addQuote as addQuoteKV } from '@/lib/quotes-kv'
 import { NextResponse } from 'next/server'
 
 export async function GET(request) {
@@ -7,7 +7,7 @@ export async function GET(request) {
     const category = searchParams.get('category')
     const limit = searchParams.get('limit')
     
-    let quotes = getAllQuotes()
+    let quotes = await getAllQuotesKV()
     
     if (category) {
       quotes = quotes.filter(q => q.category === category)
@@ -43,7 +43,7 @@ export async function POST(request) {
       }, { status: 400 })
     }
     
-    const newQuote = addQuote({
+    const newQuote = await addQuoteKV({
       text,
       category,
       author: author || 'Unknown',

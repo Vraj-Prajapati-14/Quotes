@@ -44,19 +44,19 @@ function SearchContent() {
   }, [query])
 
   return (
-    <div className="container-custom py-12">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+    <div className="container-custom py-8 sm:py-10 md:py-12">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8 text-gray-800">
           Search Quotes
         </h1>
         
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search for quotes, shayari, or status..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg"
           />
         </div>
 
@@ -77,7 +77,7 @@ function SearchContent() {
                 <p className="text-gray-500 text-lg">No quotes found. Try a different search term.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                 {results.map((quote) => (
                   <QuoteCard key={quote.id} quote={quote} />
                 ))}

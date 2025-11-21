@@ -37,14 +37,16 @@ export default function AdminPage() {
 
   const fetchQuotes = async () => {
     try {
-      const res = await fetch('/api/quotes')
+      const res = await fetch('/api/quotes?limit=10000') // Get all quotes
       const data = await res.json()
       if (data.success) {
         setQuotes(data.quotes)
+      } else {
+        console.error('Failed to fetch quotes:', data.error)
       }
-      setLoading(false)
     } catch (error) {
       console.error('Error fetching quotes:', error)
+    } finally {
       setLoading(false)
     }
   }
@@ -131,23 +133,23 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="container-custom py-12">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold">Admin Panel</h1>
+    <div className="container-custom py-6 sm:py-8 md:py-12">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">Admin Panel</h1>
         <button
           onClick={handleLogout}
-          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+          className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm sm:text-base w-full sm:w-auto"
         >
           Logout
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         <div className="card">
-          <h2 className="text-2xl font-bold mb-4">Add New Quote</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Add New Quote</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                 Quote Text *
               </label>
               <textarea
@@ -155,19 +157,19 @@ export default function AdminPage() {
                 onChange={(e) => setFormData({ ...formData, text: e.target.value })}
                 required
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter quote text..."
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
                 Category *
               </label>
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="Love Quotes">Love Quotes</option>
                 <option value="Attitude Status">Attitude Status</option>
@@ -220,34 +222,34 @@ export default function AdminPage() {
             >
               Initialize All Categories (300 each)
             </button>
-            <div className="grid grid-cols-2 gap-2 mt-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2 mt-2">
               <button
                 onClick={() => handleBulkInit('Love Quotes', 300)}
-                className="btn-primary text-sm bg-pink-600 hover:bg-pink-700"
+                className="btn-primary text-xs sm:text-sm bg-pink-600 hover:bg-pink-700"
               >
                 Love (300)
               </button>
               <button
                 onClick={() => handleBulkInit('Attitude Status', 300)}
-                className="btn-primary text-sm bg-purple-600 hover:bg-purple-700"
+                className="btn-primary text-xs sm:text-sm bg-purple-600 hover:bg-purple-700"
               >
                 Attitude (300)
               </button>
               <button
                 onClick={() => handleBulkInit('Shayari', 300)}
-                className="btn-primary text-sm bg-blue-600 hover:bg-blue-700"
+                className="btn-primary text-xs sm:text-sm bg-blue-600 hover:bg-blue-700"
               >
                 Shayari (300)
               </button>
               <button
                 onClick={() => handleBulkInit('Motivation Quotes', 300)}
-                className="btn-primary text-sm bg-green-600 hover:bg-green-700"
+                className="btn-primary text-xs sm:text-sm bg-green-600 hover:bg-green-700"
               >
                 Motivation (300)
               </button>
               <button
                 onClick={() => handleBulkInit('Festival Wishes', 300)}
-                className="btn-primary text-sm bg-yellow-600 hover:bg-yellow-700 col-span-2"
+                className="btn-primary text-xs sm:text-sm bg-yellow-600 hover:bg-yellow-700 col-span-2 sm:col-span-3 lg:col-span-2"
               >
                 Festival (300)
               </button>
