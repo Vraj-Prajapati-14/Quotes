@@ -195,15 +195,15 @@ export default function AdminPage() {
         </div>
 
         <div className="card">
-          <h2 className="text-2xl font-bold mb-4">Auto Update</h2>
+          <h2 className="text-2xl font-bold mb-4">Quick Update</h2>
           <p className="text-gray-600 mb-4">
-            Manually trigger the auto-update to add 2 new quotes to each category.
+            Add 2 new quotes to each category instantly. Use this to keep your content fresh!
           </p>
           <button
             onClick={handleAutoUpdate}
             className="btn-primary w-full mb-4"
           >
-            Run Auto Update
+            Add 2 Quotes Per Category
           </button>
           {updateStatus && (
             <p className="text-sm text-gray-600 mb-4">{updateStatus}</p>

@@ -32,28 +32,28 @@ npm run build
 npm start
 ```
 
-## Auto-Update Setup
+## Manual Updates (No Cron Jobs Required)
 
-The website is configured to auto-update with 2 new quotes per category every day at midnight.
+The website uses **manual updates only** - no automatic scheduling needed!
 
-### For Vercel Deployment:
+### How to Add Quotes:
 
-The `vercel.json` file is already configured with a cron job. Just deploy to Vercel and the cron will run automatically.
+1. **Single Quote** - Use the form in admin panel (`/admin`)
+2. **Quick Update** - Click "Add 2 Quotes Per Category" button (adds 10 quotes total)
+3. **Bulk Initialize** - Click "Initialize All Categories (300 each)" to add 1500 quotes at once
 
-### For Other Platforms:
+### Manual Update via Admin Panel:
 
-1. Set up a cron job to call `POST /api/update` daily at midnight (00:00)
-2. Protect the endpoint with authentication by uncommenting the auth check in `app/api/update/route.js`
-3. Use a service like:
-   - GitHub Actions (with scheduled workflows)
-   - External cron services (cron-job.org, EasyCron, etc.)
-   - Your server's cron system
+1. Go to `/admin` and login
+2. Use the "Quick Update" button to add 2 quotes per category
+3. Or use "Bulk Initialize" to add 300 quotes per category
 
-### Manual Update:
+### Manual Update via API:
 
-You can manually trigger updates by:
-1. Visiting `/admin` and clicking "Run Auto Update"
-2. Making a POST request to `/api/update`
+You can also trigger updates by making a POST request to `/api/update`:
+```bash
+curl -X POST https://yourdomain.com/api/update
+```
 
 ## Google AdSense Setup
 

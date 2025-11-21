@@ -6,7 +6,7 @@ A modern, SEO-optimized website for quotes, shayari, and status messages with au
 
 - 🎯 SEO Optimized with dynamic meta tags
 - 📱 Responsive Design
-- 🔄 Auto-update (2 items per category daily)
+- ✏️ Manual Content Management (Add quotes anytime via admin)
 - 📊 Google AdSense Ready
 - 🔍 Search Functionality
 - 📝 Multiple Categories (Love, Attitude, Shayari, Festival, Motivation)
