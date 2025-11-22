@@ -14,7 +14,10 @@ export async function POST(request) {
     //   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     // }
 
+    console.log('🔄 Starting manual update...')
     const count = await runManualUpdate()
+    
+    console.log(`✅ Manual update completed: ${count} quotes added`)
     
     return NextResponse.json({ 
       success: true, 
@@ -23,10 +26,12 @@ export async function POST(request) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('Error triggering update:', error)
+    console.error('❌ Error triggering update:', error)
+    console.error('Error stack:', error.stack)
     return NextResponse.json({ 
       success: false, 
-      error: error.message 
+      error: error.message || 'Unknown error occurred',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
     }, { status: 500 })
   }
 }

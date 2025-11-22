@@ -76,13 +76,22 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/update', { method: 'POST' })
       const data = await res.json()
+      
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to update quotes')
+      }
+      
       if (data.success) {
         setUpdateStatus(`Success! Added ${data.quotesAdded} quotes.`)
-        fetchQuotes()
+        // Wait a bit before refreshing to ensure data is saved
+        setTimeout(() => {
+          fetchQuotes()
+        }, 500)
       } else {
-        setUpdateStatus('Error: ' + data.error)
+        setUpdateStatus('Error: ' + (data.error || 'Unknown error'))
       }
     } catch (error) {
+      console.error('Update error:', error)
       setUpdateStatus('Error: ' + error.message)
     }
   }
@@ -204,11 +213,14 @@ export default function AdminPage() {
           <button
             onClick={handleAutoUpdate}
             className="btn-primary w-full mb-4"
+            disabled={updateStatus === 'Updating...'}
           >
-            Add 2 Quotes Per Category
+            {updateStatus === 'Updating...' ? 'Updating...' : 'Add 2 Quotes Per Category'}
           </button>
           {updateStatus && (
-            <p className="text-sm text-gray-600 mb-4">{updateStatus}</p>
+            <p className={`text-sm mb-4 ${updateStatus.startsWith('Error') ? 'text-red-600' : updateStatus.startsWith('Success') ? 'text-green-600' : 'text-gray-600'}`}>
+              {updateStatus}
+            </p>
           )}
 
           <div className="border-t border-gray-200 pt-4 mt-4">

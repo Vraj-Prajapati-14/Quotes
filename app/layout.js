@@ -84,8 +84,7 @@ export const metadata = {
     canonical: siteUrl,
   },
   verification: {
-    // Add your verification codes here
-    // google: 'your-google-verification-code',
+    google: 'QIkvpXVwT2jGWgO1B1jwE8Gpl2j8UUiEmSBbmbrK7Oo',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
@@ -136,6 +135,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="canonical" href={siteUrl} />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="google-site-verification" content="QIkvpXVwT2jGWgO1B1jwE8Gpl2j8UUiEmSBbmbrK7Oo" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

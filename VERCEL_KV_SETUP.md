@@ -7,11 +7,13 @@ Vercel's serverless functions have a **read-only file system**. When you try to 
 
 Vercel KV is a Redis database that works perfectly with Vercel and has a **free tier**.
 
-## Step 1: Install Vercel KV
+## Step 1: Install Required Packages
 
 ```bash
-npm install @vercel/kv
+npm install @upstash/redis @vercel/kv
 ```
+
+**Note:** We use `@upstash/redis` as the primary client (supports REST API) with `@vercel/kv` as fallback.
 
 ## Step 2: Create Vercel KV Database
 
