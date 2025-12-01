@@ -3,6 +3,7 @@ import QuoteCard from '@/components/QuoteCard'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { getCategoryKeywords } from '@/lib/seo-keywords'
 
 export async function generateStaticParams() {
   const quotes = getAllQuotes()
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
   }))
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
 
 export async function generateMetadata({ params }) {
   const quote = getQuoteById(params.id)
@@ -31,16 +32,18 @@ export async function generateMetadata({ params }) {
 
   // Create SEO-friendly title (max 60 chars for best results)
   const seoTitle = quote.text.length > 60 
-    ? `${quote.text.substring(0, 57)}... | ${category} Quote`
-    : `${quote.text} | ${category} Quote`
+    ? `${quote.text.substring(0, 57)}... | Best Free Latest New ${category} Quote`
+    : `${quote.text} | Best Free Latest New ${category} Quote`
+  
+  const categoryKeywords = getCategoryKeywords(category)
 
   return {
     title: seoTitle,
-    description: `${quote.text} - ${category} quote by ${author}. Share this amazing quote with your friends on WhatsApp, Facebook, and Instagram.`,
-    keywords: `${quote.text.substring(0, 50)}, ${category}, quote, shayari, status, ${category.toLowerCase()}, ${author}, share quote, whatsapp status, facebook status, instagram quote`,
+    description: `${quote.text} - Best free latest new emotional attitude ${category} quote by ${author}. Share this amazing quote with your friends on WhatsApp, Facebook, and Instagram.`,
+    keywords: `best free latest new ${quote.text.substring(0, 50)}, ${category}, quote, shayari, status, ${category.toLowerCase()}, ${author}, share quote, whatsapp status, facebook status, instagram quote, emotional quote, attitude quote, ${categoryKeywords}`,
     openGraph: {
       title: seoTitle,
-      description: `${quote.text} - ${category} quote by ${author}`,
+      description: `${quote.text} - Best free latest new emotional attitude ${category} quote by ${author}`,
       type: 'article',
       url: quoteUrl,
       siteName: 'Quotes & Shayari',
@@ -53,12 +56,12 @@ export async function generateMetadata({ params }) {
       publishedTime: quote.createdAt,
       authors: [author],
       section: category,
-      tags: [category, 'quotes', 'shayari', 'status'],
+      tags: [category, 'quotes', 'shayari', 'status', 'best', 'free', 'latest', 'new', 'emotional', 'attitude'],
     },
     twitter: {
       card: 'summary_large_image',
       title: seoTitle,
-      description: `${quote.text} - ${category} quote`,
+      description: `${quote.text} - Best free latest new ${category} quote`,
       images: [`${siteUrl}/og-image.jpg`],
     },
     alternates: {

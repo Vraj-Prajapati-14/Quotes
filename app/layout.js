@@ -2,44 +2,19 @@ import './globals.css'
 import AdSense from '@/components/AdSense'
 import ConditionalLayout from '@/components/ConditionalLayout'
 import Script from 'next/script'
+import { getHomePageKeywords } from '@/lib/seo-keywords'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
 const siteName = 'Quotes & Shayari - Best Collection of Quotes, Status & Shayari'
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Best Quotes, Shayari & Status - Daily Updated Collection | Free Quotes',
-    template: '%s | Quotes & Shayari'
+    default: 'Best Free Quotes, Shayari & Status - Latest New Emotional Attitude Quotes Collection 2025',
+    template: '%s | Best Quotes & Shayari - Free Latest New'
   },
-  description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, and English quotes. Share beautiful quotes with friends!',
-  keywords: [
-    'quotes',
-    'shayari',
-    'status',
-    'love quotes',
-    'attitude status',
-    'motivation quotes',
-    'festival wishes',
-    'hindi quotes',
-    'english quotes',
-    'romantic quotes',
-    'inspirational quotes',
-    'life quotes',
-    'friendship quotes',
-    'sad shayari',
-    'love shayari',
-    'attitude quotes',
-    'success quotes',
-    'daily quotes',
-    'best quotes',
-    'quotes collection',
-    'free quotes',
-    'share quotes',
-    'whatsapp status',
-    'facebook status',
-    'instagram quotes'
-  ].join(', '),
+  description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, English quotes, sad quotes, romantic quotes, inspirational quotes. Share beautiful quotes with friends on WhatsApp, Facebook, Instagram!',
+  keywords: getHomePageKeywords(),
   authors: [{ name: 'Quotes & Shayari Team' }],
   creator: 'Quotes & Shayari',
   publisher: 'Quotes & Shayari',
@@ -53,19 +28,19 @@ export const metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: siteName,
-    title: 'Best Quotes, Shayari & Status - Daily Updated Collection',
-    description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, and more.',
+    title: 'Best Free Latest New Emotional Attitude Quotes, Shayari & Status - Daily Updated Collection 2025',
+    description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, Hindi shayari, English quotes, sad quotes, romantic quotes, inspirational quotes.',
     images: [{
       url: `${siteUrl}/og-image.jpg`,
       width: 1200,
       height: 630,
-      alt: 'Quotes & Shayari - Best Collection',
+      alt: 'Best Free Latest New Quotes, Shayari & Status Collection',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Quotes, Shayari & Status - Daily Updated',
-    description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily.',
+    title: 'Best Free Latest New Emotional Attitude Quotes, Shayari & Status - Daily Updated 2025',
+    description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes.',
     images: [`${siteUrl}/og-image.jpg`],
     creator: '@quotesandshayari',
   },
@@ -91,8 +66,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
-  
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -114,7 +89,7 @@ export default function RootLayout({ children }) {
     "name": "Quotes & Shayari",
     "alternateName": "Best Quotes Collection",
     "url": siteUrl,
-    "description": "Daily updated collection of quotes, shayari, and status messages. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, and English quotes.",
+    "description": "Best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, English quotes, sad quotes, romantic quotes, inspirational quotes.",
     "inLanguage": "en-US",
     "potentialAction": {
       "@type": "SearchAction",

@@ -4,15 +4,17 @@ import CategoryGrid from '@/components/CategoryGrid'
 import Hero from '@/components/Hero'
 import Script from 'next/script'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+import { getHomePageKeywords } from '@/lib/seo-keywords'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
 
 export const metadata = {
-  title: 'Best Quotes, Shayari & Status - Daily Updated Collection | 1000+ Free Quotes',
-  description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, and English quotes. Share beautiful quotes with friends on WhatsApp, Facebook, and Instagram!',
-  keywords: 'quotes, shayari, status, love quotes, attitude status, motivation quotes, festival wishes, hindi quotes, english quotes, romantic quotes, inspirational quotes, life quotes, friendship quotes, sad shayari, love shayari, attitude quotes, success quotes, daily quotes, best quotes, quotes collection, free quotes, share quotes, whatsapp status, facebook status, instagram quotes',
+  title: 'Best Free Latest New Emotional Attitude Quotes, Shayari & Status - Daily Updated Collection 2025 | 1000+ Free Quotes',
+  description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, festival wishes, Hindi shayari, English quotes, sad quotes, romantic quotes, inspirational quotes, life quotes, friendship quotes. Share beautiful quotes with friends on WhatsApp, Facebook, and Instagram!',
+  keywords: getHomePageKeywords(),
   openGraph: {
-    title: 'Best Quotes, Shayari & Status - Daily Updated Collection',
-    description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, and more.',
+    title: 'Best Free Latest New Emotional Attitude Quotes, Shayari & Status - Daily Updated Collection 2025',
+    description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes, Hindi shayari, English quotes, sad quotes, romantic quotes, inspirational quotes.',
     type: 'website',
     url: siteUrl,
     siteName: 'Quotes & Shayari',
@@ -20,14 +22,14 @@ export const metadata = {
       url: `${siteUrl}/og-image.jpg`,
       width: 1200,
       height: 630,
-      alt: 'Quotes & Shayari - Best Collection',
+      alt: 'Best Free Latest New Quotes, Shayari & Status Collection',
     }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Quotes, Shayari & Status - Daily Updated',
-    description: 'Discover 1000+ amazing quotes, shayari, and status messages updated daily.',
+    title: 'Best Free Latest New Emotional Attitude Quotes, Shayari & Status - Daily Updated 2025',
+    description: 'Discover 1000+ best free latest new emotional attitude quotes, shayari, and WhatsApp status messages updated daily. Best collection of love quotes, attitude status, motivation quotes.',
     images: [`${siteUrl}/og-image.jpg`],
   },
   alternates: {

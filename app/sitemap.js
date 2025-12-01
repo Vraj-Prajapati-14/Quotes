@@ -1,7 +1,7 @@
 import { getAllQuotes, getAllCategories } from '@/lib/quotes'
 
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
   
   const categories = getAllCategories()
   const quotes = getAllQuotes()

@@ -1,7 +1,7 @@
 import { getAllQuotes, getAllCategories } from '@/lib/quotes'
 
 export default function robots() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
   
   return {
     rules: [

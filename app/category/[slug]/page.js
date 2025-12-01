@@ -3,6 +3,7 @@ import QuoteCard from '@/components/QuoteCard'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { getCategoryKeywords } from '@/lib/seo-keywords'
 
 export async function generateStaticParams() {
   const categories = getAllCategories()
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
   }))
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://quotes-status.vercel.app'
 
 export async function generateMetadata({ params }) {
   const category = getCategoryBySlug(params.slug)
@@ -26,13 +27,15 @@ export async function generateMetadata({ params }) {
   const categoryName = category.name
   const categoryLower = category.name.toLowerCase()
 
+  const categoryKeywords = getCategoryKeywords(categoryName)
+  
   return {
-    title: `${categoryName} - Best Collection of ${quoteCount}+ ${categoryName} | Quotes & Shayari`,
-    description: `Explore our amazing collection of ${quoteCount}+ ${categoryLower}. Daily updated ${categoryLower} with beautiful quotes, shayari, and status messages. Share ${categoryLower} on WhatsApp, Facebook, and Instagram. ${category.keywords || ''}`,
-    keywords: `${categoryName}, ${categoryLower}, quotes, shayari, status, ${category.keywords || ''}, best ${categoryLower}, ${categoryLower} collection, free ${categoryLower}, share ${categoryLower}, whatsapp ${categoryLower}, instagram ${categoryLower}`,
+    title: `Best Free Latest New ${categoryName} - ${quoteCount}+ ${categoryName} Collection 2025 | Quotes & Shayari`,
+    description: `Explore our best free latest new amazing collection of ${quoteCount}+ ${categoryLower}. Daily updated ${categoryLower} with beautiful emotional attitude quotes, shayari, and WhatsApp status messages. Share ${categoryLower} on WhatsApp, Facebook, and Instagram. ${category.keywords || ''}`,
+    keywords: `best free latest new ${categoryName}, ${categoryName}, ${categoryLower}, quotes, shayari, status, ${category.keywords || ''}, best ${categoryLower}, ${categoryLower} collection, free ${categoryLower}, latest ${categoryLower}, new ${categoryLower}, emotional ${categoryLower}, attitude ${categoryLower}, share ${categoryLower}, whatsapp ${categoryLower}, instagram ${categoryLower}, ${categoryKeywords}`,
     openGraph: {
-      title: `${categoryName} - Best Collection | ${quoteCount}+ ${categoryName}`,
-      description: `Explore ${quoteCount}+ amazing ${categoryLower}. Daily updated collection of ${categoryLower} with beautiful quotes, shayari, and status messages.`,
+      title: `Best Free Latest New ${categoryName} - ${quoteCount}+ ${categoryName} Collection 2025`,
+      description: `Explore ${quoteCount}+ best free latest new amazing ${categoryLower}. Daily updated collection of ${categoryLower} with beautiful emotional attitude quotes, shayari, and WhatsApp status messages.`,
       type: 'website',
       url: `${siteUrl}/category/${category.slug}`,
       siteName: 'Quotes & Shayari',
@@ -40,13 +43,13 @@ export async function generateMetadata({ params }) {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${categoryName} Collection`,
+        alt: `Best Free Latest New ${categoryName} Collection`,
       }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${categoryName} - Best Collection`,
-      description: `Explore ${quoteCount}+ amazing ${categoryLower}. Daily updated collection.`,
+      title: `Best Free Latest New ${categoryName} - ${quoteCount}+ Collection 2025`,
+      description: `Explore ${quoteCount}+ best free latest new amazing ${categoryLower}. Daily updated collection.`,
       images: [`${siteUrl}/og-image.jpg`],
     },
     alternates: {
